@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .car-spec-container {
+    @apply p-2 mx-4 md:mx-auto md:max-w-lg rounded-xl flex items-stretch space-x-4;
+  }
+
+  .car-class-container {
+    @apply h-36 w-44 flex items-center justify-center;
+  }
+
+  .car-score-container {
+    @apply flex-1 bg-white rounded-md flex items-center justify-center;
+  }
+
+  .car-class {
+    @apply font-card pb-2 text-8xl text-white font-medium;
+  }
+
+  .car-score {
+    @apply font-card pb-2 text-8xl text-gray-700 font-medium;
+  }
+
+  .car-class-x {
+    @apply bg-green-400;
+  }
+
+  .car-class-s2 {
+    @apply bg-blue-700;
+  }
+
+  .car-class-s1 {
+    @apply bg-purple-600;
+  }
+
+  .car-class-a {
+    @apply bg-red-500;
+  }
+
+  .car-class-b {
+    @apply bg-red-500;
+  }
+
+  .car-class-c {
+    @apply bg-yellow-300;
+  }
+
+  .car-class-d {
+    @apply bg-blue-300;
+  }
+}
