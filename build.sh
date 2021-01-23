@@ -16,7 +16,7 @@ popd > /dev/null
 echo ""
 echo "tailwind -------->"
 pushd tailwind > /dev/null
-./node_modules/.bin/postcss src/styles.css -o ../dist/styles.css
+NODE_ENV=production ./node_modules/.bin/postcss src/styles.css -o ../dist/styles.css
 popd > /dev/null
 
 echo ""
