@@ -2,7 +2,7 @@ module Main exposing (main)
 
 import Browser
 import Html exposing (Html, div, input, text)
-import Html.Attributes exposing (class, id, max, min, type_, value)
+import Html.Attributes exposing (class)
 import Html.Events exposing (onInput)
 
 
