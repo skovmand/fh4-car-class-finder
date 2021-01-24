@@ -6,6 +6,7 @@ import Html.Attributes exposing (class)
 import Html.Events exposing (onInput)
 
 
+main : Program () Model Msg
 main =
     Browser.sandbox { init = initial_score, update = update, view = view }
 
@@ -58,16 +59,16 @@ view model =
 carClassView : Model -> Html Msg
 carClassView score =
     let
-        carScoreToClass =
+        (carClass, carCssClass) =
             if score > 700 && score <= 800 then
-                "A"
+                ("A", "car-class-a")
 
             else
-                "?"
+                ("?", "car-class-x")
     in
-    div [ class "mt-12 car-spec-container car-class-x" ]
+    div [ class ("mt-12 car-spec-container " ++ carCssClass) ]
         [ div [ class "car-class-container" ]
-            [ div [ class "car-class" ] [ text carScoreToClass ] ]
+            [ div [ class "car-class" ] [ text carClass ] ]
         , div [ class "car-score-container" ]
             [ div [ class "car-score" ] [ text (String.fromInt score) ] ]
         ]
