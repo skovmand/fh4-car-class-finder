@@ -1,4 +1,7 @@
-# Forza Horizon 4 Car Class Calculator
+# Forza Horizon 4 Car Class Finder
+
+A programming project for August (8 years old) and me to find car classes in our favourite game Forza Horizon 4. Visit the webpage live at https://skovmand.github.io/fh4-car-class-finder/
+
 
 ## Install dependencies
 
@@ -14,9 +17,8 @@ npm ci
 cd ..
 ```
 
-## Create a build in the `dist` folder:
+## Create a build in the `docs` folder:
 
 ```
 ./build.sh
 ```
-
