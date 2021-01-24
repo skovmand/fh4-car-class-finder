@@ -539,7 +539,13 @@ video {
   align-items: center;
   justify-content: center;
   height: 9rem;
-  width: 11rem;
+  width: 8rem;
+}
+
+@media (min-width: 640px) {
+  .car-class-container {
+    width: 11rem;
+  }
 }
 
 .car-score-container {
@@ -626,6 +632,11 @@ video {
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
+}
+
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .mx-auto {
@@ -743,6 +754,14 @@ video {
 }
 
 @media (min-width: 640px) {
+  .sm\:flex-1 {
+    flex: 1 1 0%;
+  }
+
+  .sm\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @media (min-width: 768px) {

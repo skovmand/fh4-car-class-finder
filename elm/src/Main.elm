@@ -150,7 +150,7 @@ carClassView car =
 sliderView : Html Msg
 sliderView =
     div [ class "py-8 mx-auto flex" ]
-        [ div [ class "mx-auto flex-1" ] []
+        [ div [ class "mx-4 sm:mx-auto sm:flex-1" ] []
         , div [ class "py-4 flex-1" ] [ input [ class "w-full", Html.Attributes.type_ "range", Html.Attributes.min "100", Html.Attributes.max "999", Html.Attributes.value "800", onInput Change ] [] ]
-        , div [ class "mx-auto flex-1" ] []
+        , div [ class "mx-4 sm:mx-auto sm:flex-1" ] []
         ]

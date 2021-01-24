@@ -8,7 +8,7 @@
   }
 
   .car-class-container {
-    @apply h-36 w-44 flex items-center justify-center;
+    @apply h-36 w-32 sm:w-44 flex items-center justify-center;
   }
 
   .car-score-container {

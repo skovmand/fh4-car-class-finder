@@ -5340,7 +5340,7 @@ var $author$project$Main$sliderView = A2(
 			$elm$html$Html$div,
 			_List_fromArray(
 				[
-					$elm$html$Html$Attributes$class('mx-auto flex-1')
+					$elm$html$Html$Attributes$class('mx-4 sm:mx-auto sm:flex-1')
 				]),
 			_List_Nil),
 			A2(
@@ -5368,7 +5368,7 @@ var $author$project$Main$sliderView = A2(
 			$elm$html$Html$div,
 			_List_fromArray(
 				[
-					$elm$html$Html$Attributes$class('mx-auto flex-1')
+					$elm$html$Html$Attributes$class('mx-4 sm:mx-auto sm:flex-1')
 				]),
 			_List_Nil)
 		]));
