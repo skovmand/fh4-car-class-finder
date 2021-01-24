@@ -6,22 +6,32 @@ import Html.Attributes exposing (class)
 import Html.Events exposing (onInput)
 
 
-main : Program () Model Msg
+main : Program () Car Msg
 main =
-    Browser.sandbox { init = initial_score, update = update, view = view }
+    Browser.sandbox { init = initial_car, update = update, view = view }
 
 
 
 -- INIT
 
 
-type alias Model =
-    Int
+type CarClass
+    = ClassX
+    | ClassS2
+    | ClassS1
+    | ClassA
+    | ClassB
+    | ClassC
+    | ClassD
 
 
-initial_score : Model
-initial_score =
-    800
+type alias Car =
+    { score : Int, class : CarClass }
+
+
+initial_car : Car
+initial_car =
+    Car 800 ClassA
 
 
 
@@ -32,23 +42,32 @@ type Msg
     = Change String
 
 
-update : Msg -> Model -> Model
+update : Msg -> Car -> Car
 update msg _ =
     case msg of
         Change newValue ->
             case String.toInt newValue of
-                Just int ->
-                    int
+                Just score ->
+                    scoreToCar score
 
                 Nothing ->
-                    800
+                    scoreToCar 800
+
+
+scoreToCar : Int -> Car
+scoreToCar score =
+    if score > 700 && score <= 800 then
+        Car score ClassA
+
+    else
+        Car score ClassX
 
 
 
 -- VIEW
 
 
-view : Model -> Html Msg
+view : Car -> Html Msg
 view model =
     div [ class "py-8" ]
         [ carClassView model
@@ -56,21 +75,60 @@ view model =
         ]
 
 
-carClassView : Model -> Html Msg
-carClassView score =
+carClassView : Car -> Html Msg
+carClassView car =
     let
-        (carClass, carCssClass) =
-            if score > 700 && score <= 800 then
-                ("A", "car-class-a")
+        carLetter =
+            case car.class of
+                ClassX ->
+                    "X"
 
-            else
-                ("?", "car-class-x")
+                ClassS2 ->
+                    "S2"
+
+                ClassS1 ->
+                    "S1"
+
+                ClassA ->
+                    "A"
+
+                ClassB ->
+                    "B"
+
+                ClassC ->
+                    "C"
+
+                ClassD ->
+                    "D"
+
+        carCssClass =
+            case car.class of
+                ClassX ->
+                    "car-class-x"
+
+                ClassS2 ->
+                    "car-class-s2"
+
+                ClassS1 ->
+                    "car-class-s1"
+
+                ClassA ->
+                    "car-class-a"
+
+                ClassB ->
+                    "car-class-b"
+
+                ClassC ->
+                    "car-class-c"
+
+                ClassD ->
+                    "car-class-d"
     in
     div [ class ("mt-12 car-spec-container " ++ carCssClass) ]
         [ div [ class "car-class-container" ]
-            [ div [ class "car-class" ] [ text carClass ] ]
+            [ div [ class "car-class" ] [ text carLetter ] ]
         , div [ class "car-score-container" ]
-            [ div [ class "car-score" ] [ text (String.fromInt score) ] ]
+            [ div [ class "car-score" ] [ text (.score car |> String.fromInt) ] ]
         ]
 
 
