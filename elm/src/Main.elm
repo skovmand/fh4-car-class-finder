@@ -56,11 +56,26 @@ update msg _ =
 
 scoreToCar : Int -> Car
 scoreToCar score =
-    if score > 700 && score <= 800 then
+    if score == 999 then
+        Car 999 ClassX
+
+    else if score > 900 && score <= 998 then
+        Car score ClassS2
+
+    else if score > 800 && score <= 900 then
+        Car score ClassS1
+
+    else if score > 700 && score <= 800 then
         Car score ClassA
 
+    else if score > 600 && score <= 700 then
+        Car score ClassB
+
+    else if score > 500 && score <= 600 then
+        Car score ClassC
+
     else
-        Car score ClassX
+        Car score ClassD
 
 
 
