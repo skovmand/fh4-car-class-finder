@@ -22,9 +22,9 @@ cd ..
 ## Building the project
 
 ```
-# Make a development build in `build/dev`
+# Make a development build in build/dev
 make clean dev
 
-# Make a production build in `build/prod`
+# Make a production build in build/prod
 make clean prod
 ```
