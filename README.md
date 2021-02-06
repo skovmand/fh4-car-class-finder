@@ -5,8 +5,10 @@ A programming project for August (8 years old) and me to find car classes in our
 
 ## Install dependencies
 
+Make sure [Elm 0.19.1](https://guide.elm-lang.org/install/elm.html) is installed globally. Then install the javascript dependencies:
+
 ```
-# Install uglify (in a separate folder, just to minimize the js build)
+# Install uglify (in a separate folder, just used to minimize the js build)
 cd uglifyjs
 npm ci
 cd ..
@@ -17,8 +19,12 @@ npm ci
 cd ..
 ```
 
-## Create a build in the `docs` folder:
+## Building the project
 
 ```
-./build.sh
+# Make a development build in `build/dev`
+make clean dev
+
+# Make a production build in `build/prod`
+make clean prod
 ```
