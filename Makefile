@@ -22,7 +22,7 @@ build/prod/main.js: elm/src/Main.elm
 	cd elm; elm make src/Main.elm --output "../$@" --optimize
 
 build/prod/main.min.js: build/prod/main.js
-	cd uglify; ./node_modules/.bin/uglifyjs "../$^" --compress 'pure_funcs="F2,F3,F4,F5,F6,F7,F8,F9,A2,A3,A4,A5,A6,A7,A8,A9",pure_getters,keep_fargs=false,unsafe_comps,unsafe' | uglifyjs --mangle > "../$@"
+	cd uglify; ./node_modules/.bin/uglifyjs "../$^" --compress 'pure_funcs="F2,F3,F4,F5,F6,F7,F8,F9,A2,A3,A4,A5,A6,A7,A8,A9",pure_getters,keep_fargs=false,unsafe_comps,unsafe' | ./node_modules/.bin/uglifyjs --mangle > "../$@"
 
 build/prod/styles.min.css: tailwind/src/styles.css elm/src/Main.elm html/index.html tailwind/tailwind.config.js
 	cd tailwind; NODE_ENV=production ./node_modules/.bin/postcss src/styles.css -o "../$@"
